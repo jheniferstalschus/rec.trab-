@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <script src="script.js"></script>
+    <title>DS</title>
+</head>
+<body>
+  <div class="header">
+    <span>CURSO DESENVOLVIMENTO DE SISTEMAS</span>
+  </div>
+
+  <h2>DESENVOLVIMENTO DE SISTEMAS</h2>
+  <p>Venha para o nosso curso!!!!</p>
+  <p>Aqui em Irati no colégio Ântonio Xavier da Silveira.</p>
+
+  <div id="imageContainer">
+    <img class="modal-img" src="img/analise.png" alt="Snow" style="width:100%;max-width:300px" onclick="openImageModal('img/analise.png', 'Capa do Curso')">
+    <img class="modal-img" src="img/tads.jpg" alt="Snow" style="width:100%;max-width:300px" onclick="openImageModal('img/tads.jpg', 'Programação')">
+    <img class="modal-img" src="img/professor.webp" alt="Snow" style="width:100%;max-width:300px" onclick="openImageModal('img/professor.webp', 'Professor')">
+  </div>
+
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+    <div id="caption"></div>
+  </div>
+
+  <script>
+    var modal = document.getElementById("myModal");
+    var modalContent = document.getElementById("myModalContent");
+    var modalImg = document.getElementById("modalImg");
+    var modalBtns = document.getElementsByClassName("modal-img");
+    var span = document.getElementsByClassName("close");
+
+    function openImageModal(src, alt) {
+      modal.style.display = "block";
+      modalImg.src = src;
+      document.getElementById("caption").innerHTML = alt;
+    }
+
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    function openContentModal() {
+      modalContent.style.display = "block";
+    }
+
+    function closeModalContent() {
+      modalContent.style.display = "none";
+    }
+
+    for (var i = 0; i < span.length; i++) {
+      span[i].onclick = function() {
+        modal.style.display = "none";
+        modalContent.style.display = "none";
+      }
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+      if (event.target == modalContent) {
+        modalContent.style.display = "none";
+      }
+    }
+  </script>
+
+  <h2>PARA MAIS INFORMAÇÕES ACESSE AQUI </h2>
+  
+  <button class="modal-btn" onclick="openModal()">CLIQUE AQUI</button>
+  
+  <div id="myModalContent" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close" onclick="closeModalContent()">&times;</span>
+      </div>
+      <h2>O QUE É TRABALHADO? COMO FAZER MATRICULAR A MATRÍCULA?</h2>
+      <div class="modal-body">
+        <p>O técnico em desenvolvimento de sistemas forma profissionais capazes de desenvolver e programar sistemas computacionais,</p>
+        <p>de acordo com normas e padrões de qualidade, integridade e segurança da informação.</p>
+        <p>Vá até o colégio Ântonio Xavier da Silveira ou acesse o site a seguir:</p>
+        <p>www</p>
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    var modal = document.getElementById("myModal");
+    var modalContent = document.getElementById("myModalContent");
+    var modalImg = document.getElementById("modalImg");
+    var modalBtns = document.getElementsByClassName("modal-btn");
+    var span = document.getElementsByClassName("close");
+  
+    function openModal() {
+      modal.style.display = "block";
+    }
+  
+    function closeModal() {
+      modal.style.display = "none";
+    }
+  
+    function closeModalContent() {
+      modalContent.style.display = "none";
+    }
+  
+    for (var i = 0; i < modalBtns.length; i++) {
+      modalBtns[i].onclick = function() {
+        modalContent.style.display = "block";
+        modalImg.src = this.previousElementSibling.src;
+      }
+    }
+  
+    for (var i = 0; i < span.length; i++) {
+      span[i].onclick = function() {
+        modal.style.display = "none";
+        modalContent.style.display = "none";
+      }
+    }
+  
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+      if (event.target == modalContent) {
+        modalContent.style.display = "none";
+      }
+    }
+  </script>
+  </body>
+  </html>
+  
+
